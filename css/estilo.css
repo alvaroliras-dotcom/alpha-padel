@@ -1,0 +1,334 @@
+/* Alpha Padel · maqueta de venta · tokens de FIRMA.md §5 · tema derivado de 008-ALERIC/tema (código propio) */
+@font-face{font-family:'Montserrat';src:url('../fonts/Montserrat-Variable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --ap-marino:#0C1A3D;--ap-marino-profundo:#070F26;--ap-blanco-pista:#F4F3EE;--ap-gris-calido:#DCDAD2;
+  --ap-gris-acero:#6B7080;--ap-gris-acero-texto:#565A66;--ap-gris-acero-sobre-oscuro:#979BA6;--ap-blanco:#fff;
+  --ap-texto:var(--ap-marino);--ap-texto-2:#465069;--ap-texto-sobre-oscuro:#F4F3EE;--ap-texto-2-sobre-oscuro:#AEB2B9;
+  --ap-filete:rgba(12,26,61,.14);--ap-filete-oscuro:rgba(244,243,238,.14);--ap-velo:rgba(7,15,38,.62);--ap-trama:rgba(255,255,255,.08);
+  --t-display:clamp(2.875rem,1.6rem + 5.6vw,6rem);--t-h1:clamp(2.25rem,1.4rem + 3.4vw,4.5rem);
+  --t-h2:clamp(1.75rem,1.3rem + 1.6vw,2.5rem);--t-cierre:clamp(3.5rem,1.5rem + 8vw,9.0625rem);
+  --t-cifra:clamp(4.5rem,2rem + 8vw,9rem);--t-sub:clamp(1.125rem,1.05rem + .4vw,1.375rem);--t-cuerpo:clamp(1rem,.96rem + .2vw,1.0625rem);
+  --mx:clamp(16px,2.8vw,40px);--sec:clamp(64px,9vw,144px);--cab:80px;
+  --ease:cubic-bezier(.22,1,.36,1);--tan:.675; /* 1/tan(56°) */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Montserrat',Arial,sans-serif;font-size:var(--t-cuerpo);line-height:1.55;color:var(--ap-texto);background:var(--ap-blanco-pista);overflow-x:hidden}
+h1,h2,h3,p,figure,ul{margin:0}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--ap-marino);outline-offset:2px}
+.osc :focus-visible,.cab :focus-visible{outline-color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cont{max-width:1320px;margin:0 auto;padding:0 var(--mx)}
+.sec{padding:var(--sec) 0;position:relative}
+.osc{background:var(--ap-marino);color:var(--ap-texto-sobre-oscuro)}
+.prof{background:var(--ap-marino-profundo);color:var(--ap-texto-sobre-oscuro)}
+.calido{background:var(--ap-gris-calido)}
+/* tipografía */
+.eti{font-weight:600;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:20px;color:var(--ap-texto-2)}
+.osc .eti,.prof .eti{color:var(--ap-texto-2-sobre-oscuro)}
+.eti::before{content:"";width:24px;height:6px;background:currentColor;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.disp,.h1,.h2,.cierre{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.disp{font-size:var(--t-display)}.h1{font-size:var(--t-h1)}.h2{font-size:var(--t-h2);font-weight:800;margin-bottom:24px}
+.cierre{font-size:var(--t-cierre);line-height:.92}
+.sub{font-size:var(--t-sub);font-weight:600;line-height:1.35}
+.txt{max-width:62ch;color:var(--ap-texto-2)}
+.osc .txt,.prof .txt{color:var(--ap-texto-2-sobre-oscuro)}
+.micro{font-size:12px;color:var(--ap-texto-2);margin-top:10px}.osc .micro,.prof .micro{color:var(--ap-texto-2-sobre-oscuro)}
+/* botones */
+.btn{--c:var(--ap-marino);--f:var(--ap-blanco-pista);position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 44px 0 28px;border:2px solid var(--c);border-radius:2px;background:var(--c);color:var(--f);font:800 14px/1 'Montserrat',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;overflow:hidden;clip-path:polygon(0 0,100% 0,calc(100% - 22px) 100%,0 100%);isolation:isolate;transition:transform .12s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--f);transform:translateX(-110%) skewX(-34deg);transition:transform .28s var(--ease)}
+.btn span{transition:color .28s var(--ease)}
+.osc .btn,.prof .btn,.cab .btn{--c:#fff;--f:var(--ap-marino)}
+.osc .btn::before,.prof .btn::before,.cab .btn::before{background:var(--ap-marino-profundo)}
+.osc .btn:hover span,.prof .btn:hover span,.cab .btn:hover span{color:#fff}
+.btn:active{transform:translateY(1px)}
+.btn.sec2{background:transparent;color:var(--c);clip-path:none;padding:0 28px}
+.btn.sec2::before{background:var(--c)}
+.osc .btn.sec2,.prof .btn.sec2{--c:var(--ap-blanco-pista);color:var(--ap-blanco-pista);background:transparent}
+.osc .btn.sec2::before,.prof .btn.sec2::before{background:var(--ap-blanco-pista)}
+.osc .btn.sec2:hover span,.prof .btn.sec2:hover span{color:var(--ap-marino)}
+.btn.sec2:hover span{color:var(--ap-blanco-pista)}
+@media(hover:hover){.btn:hover::before{transform:translateX(0) skewX(0)}}
+.enl{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.grupo{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+/* cabecera */
+.cab{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--cab);background:var(--ap-marino);color:#fff;transition:height .3s var(--ease)}
+.cab.baja{--cab:68px;height:68px}
+.cab .cont{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.cab .logo img{width:238px;height:36px}
+.cab nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,28px)}
+.cab nav a:not(.btn){font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.cab nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:6px}
+.menu-b{display:none;width:48px;height:48px;border:2px solid #fff;background:transparent;color:#fff;border-radius:2px;cursor:pointer}
+.menu-b i{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
+.panel{position:fixed;inset:0 0 0 auto;width:min(360px,100%);z-index:60;background:var(--ap-marino-profundo);color:#fff;transform:translateX(100%);transition:transform .6s var(--ease);padding:96px 32px 32px;visibility:hidden}
+.panel.abierto{transform:none;visibility:visible}
+.panel a{display:block;padding:18px 0;border-bottom:1px solid var(--ap-filete-oscuro);font-weight:800;font-size:22px;text-transform:uppercase;text-decoration:none}
+.panel .cerrar{position:absolute;top:16px;right:16px;width:48px;height:48px;background:transparent;border:2px solid #fff;color:#fff;font-size:22px;cursor:pointer}
+/* portada */
+.portada{padding-top:calc(var(--cab) + clamp(40px,6vw,96px));padding-bottom:var(--sec);background:var(--ap-marino-profundo) radial-gradient(120% 80% at 80% 0,rgba(255,255,255,.06),transparent 60%);color:#fff;position:relative;overflow:hidden}
+.portada::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-56deg,var(--ap-trama) 0 1px,transparent 1px 48px);pointer-events:none}
+.portada .cont{position:relative;z-index:1;display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:start}
+.portada .disp{margin-bottom:24px}
+.portada .txt{margin-bottom:8px}
+.tira{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:48px;grid-column:1/-1}
+.tira .foto{aspect-ratio:1/1;clip-path:polygon(var(--k,24%) 0,100% 0,calc(100% - var(--k,24%)) 100%,0 100%)}
+.tira .foto:nth-child(2){margin-top:-32px}.tira .foto:nth-child(3){margin-top:-64px}
+/* foto (hueco) */
+.foto{position:relative;overflow:hidden;background:linear-gradient(135deg,#16295c,#0a1531 60%,#1b2f66);color:rgba(255,255,255,.7);display:flex;align-items:flex-end;min-height:120px}
+.foto::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-56deg,rgba(255,255,255,.06) 0 1px,transparent 1px 36px)}
+.foto small{position:relative;z-index:1;margin:12px;font:600 11px/1.3 'Montserrat';letter-spacing:.12em;text-transform:uppercase}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.corte{clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),calc(100% - 27px) 100%,0 100%)}
+html.js .foto-bn:not(.tiene) img{filter:grayscale(1) contrast(1.05);transition:filter .6s var(--ease)}
+html.js .foto-bn.on{background:linear-gradient(135deg,#1f2a44,#0d1220)}
+html.js .foto-bn.on img,html.js .foto-bn img.col{filter:none}
+@media(hover:hover){html.js .foto-bn:hover{filter:none}}
+/* tarjeta de estado */
+.estado{background:var(--ap-blanco-pista);color:var(--ap-marino);padding:28px 28px 24px;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 59px,100% 100%,0 100%)}
+.estado .fil{width:24px;height:6px;background:var(--ap-marino);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);margin-bottom:16px}
+.est-l{display:flex;align-items:center;gap:10px;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.par{width:22px;height:12px;background:var(--ap-marino);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.par.cerr{background:transparent;box-shadow:inset 0 0 0 2px var(--ap-marino);border:2px solid var(--ap-marino);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%);background:#fff}
+.estado .hor{font-size:14px;margin:12px 0;font-variant-numeric:tabular-nums;color:var(--ap-texto-2)}
+.estado .rev{font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.estado blockquote{margin:0;font-size:15px;line-height:1.5}
+.estado cite{display:block;font:600 12px/1 'Montserrat';letter-spacing:.12em;text-transform:uppercase;margin-top:10px;font-style:normal;color:var(--ap-texto-2)}
+/* cinta */
+.cinta{background:var(--ap-gris-calido);color:var(--ap-marino);overflow:hidden;padding:20px 0;position:relative}
+.cinta-p{display:flex;width:max-content;animation:cinta 60s linear infinite}
+.cinta:hover .cinta-p,.cinta:focus-within .cinta-p,.cinta.pausa .cinta-p{animation-play-state:paused}
+.cinta-p span{font-weight:900;font-size:clamp(1.25rem,1rem + 1vw,2rem);text-transform:uppercase;letter-spacing:-.01em;padding:0 22px;white-space:nowrap}
+.cinta-p span::after{content:"";display:inline-block;width:14px;height:14px;margin-left:44px;background:var(--ap-marino);clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%)}
+@keyframes cinta{to{transform:translateX(-50%)}}
+.cinta .pausa-b{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:68px;height:44px;border:2px solid var(--ap-marino);background:var(--ap-gris-calido);color:var(--ap-marino);font:800 11px 'Montserrat';cursor:pointer;display:none}
+html.js .cinta .pausa-b{display:block}
+html:not(.js) .cinta-p{animation:none;flex-wrap:wrap;width:auto}
+/* banda a sangre */
+.banda{height:clamp(260px,38vw,520px);overflow:hidden;position:relative;background:var(--ap-marino-profundo)}
+.banda .foto{position:absolute;inset:0;transform:scale(var(--g,1));transform-origin:center;will-change:transform}
+html.js .banda .foto{--g:.82}
+.banda::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--ap-velo),transparent 60%);pointer-events:none;opacity:.35}
+/* revelado */
+html.js .rev{opacity:0;transform:translateY(40px);transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--d,0s)}
+html.js .rev.on{opacity:1;transform:none}
+/* secciones de dos columnas */
+.dos{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);align-items:center}
+.dos.inv{grid-template-columns:5fr 7fr}
+.dos .foto{aspect-ratio:4/5}
+.dos .foto.ancho{aspect-ratio:3/2}
+/* filas */
+.filas{border-top:1px solid var(--ap-filete)}
+.fila{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid var(--ap-filete)}
+.fila b{font-weight:900;font-size:40px;color:var(--ap-gris-acero)}
+.fila h3{font-weight:800;font-size:var(--t-sub);text-transform:uppercase}
+/* cifras */
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ap-filete)}
+.cifra{padding:32px 24px 32px 0;border-right:1px solid var(--ap-filete);padding-left:24px}
+.cifra:first-child{padding-left:0}.cifra:last-child{border-right:0}
+.cifra b{display:block;font-weight:900;font-size:var(--t-cifra);line-height:1;font-variant-numeric:tabular-nums}
+.cifra span{font:600 12px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--ap-texto-2)}
+/* carrusel */
+.carr-c{overflow:hidden;contain:paint}
+.carr-t{display:flex;align-items:end;justify-content:space-between;margin-bottom:32px;gap:16px}
+.flechas{display:flex;gap:8px}
+.flechas button{width:56px;height:48px;background:transparent;border:2px solid currentColor;color:inherit;font:800 20px 'Montserrat';cursor:pointer;border-radius:2px}
+.flechas button:hover{background:var(--ap-blanco-pista);color:var(--ap-marino)}
+.carr{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:0 var(--mx) 8px;scrollbar-width:none;cursor:grab}
+.carr::-webkit-scrollbar{display:none}
+.carr>*{flex:none;scroll-snap-align:start}
+.carr .foto{height:560px;width:448px}.carr .foto.h{width:840px}
+.carr .ult{height:560px;width:448px;background:var(--ap-marino);color:#fff;display:flex;align-items:end;padding:32px;border:2px solid var(--ap-filete-oscuro)}
+.carr .ult a{font-weight:900;font-size:28px;text-transform:uppercase;text-decoration:none;line-height:1.1}
+.cont-n{font:700 12px 'Montserrat';letter-spacing:.15em}
+.rev-c{flex:none;width:380px;min-height:360px;background:#fff;border:1px solid var(--ap-filete);padding:40px 32px 32px;position:relative;display:flex;flex-direction:column}
+.rev-c::before{content:"“";position:absolute;top:8px;left:24px;font:900 96px/1 'Montserrat';color:rgba(12,26,61,.12)}
+.rev-c p{font-weight:500;font-size:17px;line-height:1.55;margin-top:32px;flex:1}
+.rev-c b{display:block;font:700 12px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;margin-top:24px}
+.rev-c small{font-size:12px;color:var(--ap-texto-2)}
+/* mapa */
+.mapa{aspect-ratio:16/7;min-height:260px;background:var(--ap-marino) repeating-linear-gradient(-56deg,rgba(255,255,255,.07) 0 1px,transparent 1px 40px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;text-align:center;padding:24px}
+/* pie */
+.pie{padding:var(--sec) 0 0;overflow:hidden;position:relative}
+.pie .cont{position:relative;z-index:1}
+.pie .cierre{margin:12px 0 32px}
+.pie-a{position:relative;margin-top:clamp(48px,6vw,96px);height:clamp(220px,32vw,460px);overflow:hidden}
+.pie-a img{position:absolute;left:var(--mx);bottom:-8%;width:min(46vw,640px);opacity:.14;transform:translateX(var(--pa,0))}
+.pie-leg{border-top:1px solid var(--ap-filete-oscuro);padding:20px 0 96px;font-size:13px;color:var(--ap-texto-2-sobre-oscuro);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+.pie-leg a{text-decoration:underline;text-underline-offset:3px}
+/* barra móvil */
+.barra{position:fixed;inset:auto 0 0 0;z-index:40;background:var(--ap-marino-profundo);color:#fff;display:none;grid-template-columns:1fr auto;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .4s var(--ease);border-top:1px solid var(--ap-filete-oscuro)}
+.barra.vis{transform:none}
+.barra a.rp{background:#fff;color:var(--ap-marino);min-height:52px;display:flex;flex-direction:column;justify-content:center;padding:0 16px;text-decoration:none;font-weight:800;font-size:13px;line-height:1.15;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.barra a.rp small{font:600 11px 'Montserrat';letter-spacing:.06em;opacity:.8}
+.barra a.ll{min-height:52px;min-width:96px;display:flex;align-items:center;justify-content:center;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:800;font-size:13px;text-transform:uppercase;border-radius:2px}
+/* pozo clavado (Z3) */
+.pozo{--rh:60px;background:var(--ap-marino-profundo);color:#fff;position:relative}
+.pozo-in{position:relative;padding:var(--sec) 0}
+.pozo-gr{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);align-items:center}
+.esc{position:relative;display:grid;gap:4px}
+.fil-p{height:calc(var(--rh) - 4px);display:flex;align-items:center;gap:20px;padding-left:20px;background:var(--ap-marino);clip-path:polygon(0 0,100% 0,calc(100% - 43px) 100%,0 100%);font-weight:900;font-size:40px;position:relative;transition:background .3s}
+.fil-p:nth-child(even){background:#101f4a}
+.fil-p.act{background:#1b2f66}
+.ficha{position:absolute;left:96px;width:112px;height:40px;background:#fff;color:var(--ap-marino);font:900 14px/40px 'Montserrat';text-align:center;letter-spacing:.12em;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);top:calc(var(--fila,3) * var(--rh) + 8px);transition:top .7s var(--ease);z-index:2}
+.flc{position:absolute;left:230px;font:900 28px 'Montserrat';opacity:0;transition:opacity .3s,top .7s var(--ease);z-index:2;top:calc(var(--fila,3) * var(--rh) + 12px)}
+.pozo.fin .flc{opacity:1}
+.ind{display:flex;align-items:center;gap:8px;margin-top:20px;font:700 12px 'Montserrat';letter-spacing:.14em;text-transform:uppercase}
+.ind i{width:22px;height:10px;background:rgba(255,255,255,.2);clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);transition:background .3s}
+.ind i.l{background:#fff}
+.barra15{height:6px;background:rgba(255,255,255,.18);margin-top:14px;position:relative}
+.barra15 i{position:absolute;inset:0 auto 0 0;width:calc(var(--b,0) * 100%);background:#fff}
+.boc{font:900 14px 'Montserrat';letter-spacing:.2em;opacity:0;transition:opacity .2s;margin-top:8px}
+.boc.on{opacity:1}
+.pasos{display:grid;gap:clamp(32px,5vw,64px)}
+.paso{border-left:4px solid var(--ap-filete-oscuro);padding:4px 0 4px 24px;opacity:.74;transition:opacity .4s,border-color .4s}
+.paso.act{opacity:1;border-color:#fff}
+.paso b{font:900 14px 'Montserrat';letter-spacing:.18em;display:block;margin-bottom:8px;color:var(--ap-texto-2-sobre-oscuro)}
+.paso p{font-size:var(--t-sub);font-weight:600;line-height:1.4}
+.ctrl{display:none;gap:12px;margin-top:20px}
+.ejem{font-size:12px;color:var(--ap-texto-2-sobre-oscuro);margin-top:12px}
+@media(min-width:1024px) and (hover:hover){html.js .pozo.clav{height:300vh}html.js .pozo.clav .pozo-in{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;padding:calc(var(--cab) + 24px) 0 48px}html.js .pozo.clav .pozo-in>.cont{width:100%}}
+html.js .pozo:not(.clav) .ctrl{display:flex}
+/* tarjetas de pozo */
+.tarjetas{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;align-items:start}
+.tarjeta .foto{aspect-ratio:4/5}.tarjeta:nth-child(2){margin-top:48px}.tarjeta:nth-child(3){margin-top:96px}
+.tarjeta h3{font-weight:800;text-transform:uppercase;margin:16px 0 6px;font-size:20px}
+/* titular enorme */
+.gran{padding:var(--sec) 0}
+.gran .h1{font-size:clamp(2.5rem,1rem + 7vw,7rem)}
+.gran .micro{max-width:62ch}
+/* corte */
+.corte-d{clip-path:polygon(0 clamp(24px,4vw,56px),100% 0,100% 100%,0 100%);margin-top:-1px;padding-top:calc(var(--sec) + 40px)}
+/* hojas portada interiores */
+.port-i{padding-top:calc(var(--cab) + clamp(32px,5vw,80px));padding-bottom:var(--sec);background:var(--ap-marino-profundo);color:#fff;position:relative;overflow:hidden}
+.port-i::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-56deg,var(--ap-trama) 0 1px,transparent 1px 48px);pointer-events:none}
+.port-i .cont{position:relative;z-index:1;display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:center}
+.port-i .foto{aspect-ratio:4/5;clip-path:polygon(24% 0,100% 0,76% 100%,0 100%)}
+.cita{max-width:60ch;margin-top:32px;border-left:4px solid var(--ap-filete-oscuro);padding-left:20px;font-size:17px;line-height:1.5}
+.cita cite{display:block;font:700 12px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;margin-top:10px;font-style:normal;color:var(--ap-texto-2-sobre-oscuro)}
+/* responsive */
+@media(max-width:1023px){
+  .cab .logo img{width:205px;height:31px}
+  .cab nav{display:none}.menu-b{display:block}
+  .portada .cont,.port-i .cont,.dos,.dos.inv,.pozo-gr{grid-template-columns:1fr}
+  .cifras{grid-template-columns:1fr 1fr}.cifra:nth-child(2){border-right:0}.cifra:nth-child(3){padding-left:0}
+  .tarjetas{grid-template-columns:1fr}.tarjeta:nth-child(n){margin-top:0}
+  .carr .foto{height:460px}.carr .ult{height:460px}
+  .tira .foto{aspect-ratio:3/4}
+  .barra{display:grid}
+  .rev-c{width:82vw}
+}
+@media(max-width:767px){
+  :root{--cab:60px}.cab.baja{--cab:60px;height:60px}
+  .cab .logo img{width:180px;height:27px}
+  .carr .foto,.carr .ult{height:380px;width:82vw}.carr .foto.h{width:82vw}
+  .fila{grid-template-columns:48px 1fr}.fila .enl{grid-column:2}.fila b{font-size:28px}
+  .esc .fil-p{height:52px;font-size:30px}.ficha{top:calc(var(--fila,3) * 56px + 6px);left:70px;width:96px;height:38px;line-height:38px}.flc{left:190px;top:calc(var(--fila,3) * 56px + 10px)}
+  .btn{width:100%;padding:0 28px;clip-path:none}
+  .barra{padding-left:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important;scroll-behavior:auto!important}
+  html.js .rev{opacity:1;transform:none}html.js .banda .foto{--g:1}
+  .cinta-p{animation:none;flex-wrap:wrap;width:auto}
+  html.js .foto-bn img{filter:none}
+}
+/* ---- añadidos de la maqueta ---- */
+html.js .ctrl{display:flex}
+.ctrl button{min-height:48px;padding:0 24px;background:transparent;border:1px solid var(--ap-filete-oscuro);border-color:rgba(244,243,238,.5);color:#fff;font:700 13px 'Montserrat';letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px}
+.ctrl button[aria-pressed=true]{background:#fff;color:var(--ap-marino)}
+html:not(.js) .flc{opacity:1}
+.flc{font-size:22px;white-space:nowrap}
+.ficha-et{position:absolute;left:96px;font:700 11px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--ap-texto-2-sobre-oscuro);top:calc(3 * var(--rh) - 14px);transition:opacity .3s}
+.paso .foto{aspect-ratio:16/6;margin-top:12px;max-width:380px;clip-path:polygon(24px 0,100% 0,calc(100% - 24px) 100%,0 100%)}
+.marcas{display:flex;gap:8px;margin:32px 0}
+.marcas i{width:36px;height:56px;background:var(--ap-marino);clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);opacity:1}
+.marcas i.v{background:var(--ap-marino);box-shadow:none;position:relative}
+.marcas i.v::after{content:"";position:absolute;inset:4px;background:var(--ap-blanco-pista);clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)}
+html.js .marcas i{transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease);transition-delay:calc(var(--i) * 70ms)}
+html.js .marcas.on i{transform:none}
+.tira-pozo{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:56px}
+.tira-pozo div{height:96px;background:var(--ap-marino);clip-path:polygon(24px 0,100% 0,calc(100% - 24px) 100%,0 100%);color:#fff;font:900 36px/96px 'Montserrat';padding-left:28px;position:relative}
+.tira-pozo div.yo::after{content:"TÚ";position:absolute;left:50%;top:50%;transform:translate(-30%,-50%);background:#fff;color:var(--ap-marino);font:900 13px/32px 'Montserrat';padding:0 16px;letter-spacing:.12em}
+.tira-pozo small{grid-column:1/-1;font-size:13px;color:var(--ap-texto-2)}
+html.js .tira-pozo div{transform:translateY(24px);opacity:0;transition:.6s var(--ease);transition-delay:calc(var(--i)*60ms)}
+html.js .tira-pozo.on div{transform:none;opacity:1}
+.hor-g{display:grid;gap:0;border-top:1px solid var(--ap-filete);margin:24px 0}
+.hor-g div{display:flex;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid var(--ap-filete);font-variant-numeric:tabular-nums}
+.hor-g b{font-weight:900;font-size:clamp(1.25rem,1rem + 1.2vw,2rem);text-transform:uppercase}
+.hor-g span{font-weight:800;font-size:clamp(1.25rem,1rem + 1.2vw,2rem)}
+.port-i .cont{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:center;position:relative;z-index:1}
+.cita blockquote{margin:0;font-weight:800;font-size:clamp(1.5rem,1rem + 2vw,2.5rem);line-height:1.2;max-width:28ch}
+.pie-leg a{color:inherit}
+.dos h2{margin-top:0}
+.mapa a{color:#fff}
+@media(max-width:1023px){.port-i .cont{grid-template-columns:1fr}.tira-pozo div{font-size:24px;padding-left:14px}.pozo-gr{grid-template-columns:1fr}}
+@media(max-width:767px){.marcas i{width:26px;height:44px}.tira-pozo div{height:64px;line-height:64px;font-size:18px;padding-left:10px}.tira-pozo div.yo::after{display:none}}
+.h1+.txt,.h1+.sub,.h2+.txt,.h2+.sub{margin-top:24px}
+.cont-n{white-space:nowrap}
+
+.pozo .h1{font-size:var(--t-h2)}
+.pozo .ctrl{margin-top:16px}
+.pozo-in{padding:calc(var(--sec)/2) 0}
+@media(max-width:767px){.pozo{--rh:56px}}
+@media(max-width:767px){.flc{font-size:15px;left:150px}.ficha-et{left:70px}}
+@media(max-width:767px){.tira .foto small{font-size:9px;margin:8px}}
+.paso .foto img{object-position:50% 58%}
+.cab nav a:not(.btn){padding:12px 0;display:inline-block}
+.enl{display:inline-block;padding:11px 0}
+.cab .logo{display:inline-flex;align-items:center;min-height:44px}
+/* ---- movimiento de la firma (Kubrick/Emil): máscara del titular, tira que sube, paralaje, entradilla que se enciende ---- */
+@keyframes mascara{from{clip-path:polygon(-5% -12%,-5% -12%,-30% 112%,-30% 112%)}to{clip-path:polygon(-5% -12%,115% -12%,115% 112%,-5% 112%)}}
+@keyframes sube{from{opacity:0;transform:translateY(90px)}to{opacity:1;transform:none}}
+html.js .portada .disp,html.js .port-i .h1{animation:mascara 1.05s var(--ease) .1s both}
+html.js .tira .foto{animation:sube 1s var(--ease) both}
+html.js .tira .foto:nth-child(1){animation-delay:.35s}html.js .tira .foto:nth-child(2){animation-delay:.5s}html.js .tira .foto:nth-child(3){animation-delay:.65s}
+.tira .foto{translate:0 var(--py,0px)}
+.port-i>.cont>.foto{translate:0 var(--py,0px)}
+html.js [data-enciende] .w{opacity:.2;transition:opacity .35s var(--ease)}
+html.js [data-enciende] .w.on{opacity:1}
+.pie::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-56deg,var(--ap-trama) 0 1px,transparent 1px 48px);background-position:var(--pt,0px) 0;pointer-events:none}
+@media(hover:hover){
+ .fila b{transition:color .25s var(--ease)}.fila:hover b{color:var(--ap-marino)}
+ .tarjeta .foto img,.dos .foto img{transition:transform .5s var(--ease)}.tarjeta:hover .foto img,.dos .foto:hover img{transform:scale(1.035)}
+ .rev-c{transition:transform .3s var(--ease),box-shadow .3s var(--ease)}.rev-c:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(12,26,61,.12)}
+ .cab nav a:not(.btn),.enl{transition:opacity .2s}
+}
+@media(prefers-reduced-motion:reduce){html.js .portada .disp,html.js .port-i .h1,html.js .tira .foto{animation:none}html.js [data-enciende] .w{opacity:1}}
+/* pie con datos del club */
+.pie-f{display:grid;grid-template-columns:1.3fr 1fr 1fr .8fr;gap:clamp(24px,4vw,64px);padding-top:56px;padding-bottom:48px;border-top:1px solid var(--ap-filete-oscuro);position:relative;z-index:1}
+.pie-f h2{font:800 12px 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--ap-texto-2-sobre-oscuro);margin:0 0 16px}
+.pie-f address{font-style:normal;line-height:1.6}
+.pie-f p{margin:0 0 8px;color:var(--ap-texto-2-sobre-oscuro);line-height:1.55}
+.pie-f address,.pie-f a{color:#fff}
+.pie-f a:not(.enl){text-decoration:none;display:inline-block;padding:6px 0;font-weight:600}
+.pie-f a:hover{text-decoration:underline;text-underline-offset:4px}
+.pie-f ul{list-style:none;margin:0;padding:0}
+.pie-f .pf-h{font-size:14px;margin-top:12px;font-variant-numeric:tabular-nums}
+.pf-m img{width:205px;height:31px;margin-bottom:20px}
+.pie-leg{padding-top:20px;position:relative;z-index:1}
+@media(max-width:1023px){.pie-f{grid-template-columns:1fr 1fr}.pf-m{grid-column:1/-1}}
+@media(max-width:767px){.pie-f{grid-template-columns:1fr}}
+/* ---- componentes de las páginas interiores ---- */
+.faq{display:grid;border-top:1px solid var(--ap-filete)}
+.faq details{border-bottom:1px solid var(--ap-filete)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:64px;padding:12px 0;font-weight:800;font-size:var(--t-sub);text-transform:uppercase}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:900 28px 'Montserrat';flex:none;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{padding:0 0 24px;max-width:62ch;color:var(--ap-texto-2)}
+.calido .faq{border-color:rgba(12,26,61,.2)}
+.rev-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.rev-g .rev-c{width:auto;min-height:0}
+.mig{font:600 12px 'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:var(--ap-texto-2-sobre-oscuro);margin-bottom:20px}
+.mig a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.art{max-width:68ch}
+.art p{margin:0 0 20px;color:var(--ap-texto-2);font-size:1.0625rem}
+.art .h2{margin:40px 0 16px}
+.art .h2:first-child{margin-top:0}
+.art .tira-pozo{margin:32px 0}
+.art .grupo{margin-top:32px}
+.pie-f .pf-z{margin-top:16px;line-height:1.9}
+.cab nav a[aria-current=page]{text-decoration:underline;text-underline-offset:8px}
