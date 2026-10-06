@@ -372,3 +372,17 @@ html.js [data-enciende] .w.on{opacity:1}
 .menu-b i{background:var(--ap-marino)}
 .pie-a img{filter:brightness(0) invert(1)}
 .cab.baja .logo img{height:54px;width:auto}
+
+/* acento pelota de tenis (lima del logo original) */
+:root{--ap-lima:#D5DB2A;--ap-verde:#9DC41E}
+.estado .fil{background:var(--ap-lima)}
+.cinta{background:var(--ap-lima)}
+.cinta .pausa-b{background:var(--ap-lima)}
+.cinta-p span::after{background:var(--ap-marino)}
+.cifra{border-top:6px solid var(--ap-lima);margin-top:-1px}
+.cab .btn:hover::before{background:var(--ap-lima)}
+.cab .btn{box-shadow:inset 0 -4px 0 var(--ap-lima)}
+.btn:not(.sec2)::before{background:var(--ap-lima)}
+.btn:not(.sec2):hover span{color:var(--ap-marino)}
+.portada.clara .h1 em,.portada.clara .h1 mark{background:linear-gradient(transparent 62%,var(--ap-lima) 62%);color:inherit;font-style:normal}
+.pie .fil,.pf-m{border-top-color:var(--ap-lima)}

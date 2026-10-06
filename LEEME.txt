@@ -1,0 +1,2 @@
+Sube el CONTENIDO de la carpeta tanda-1 (no la carpeta) a GitHub: Add file > Upload files.
+Borra antes del repo (si existen): imagenes/logo-horizontal-blanco.svg, simbolo-blanco.svg, simbolo-marino.svg, favicon.svg
