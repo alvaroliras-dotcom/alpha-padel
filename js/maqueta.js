@@ -216,15 +216,24 @@
     iot.observe(tira);
   }
 
-  /* mapa: solo se carga al pulsar (consentimiento) */
-  $$('[data-mapa]').forEach(function (a) {
-    a.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      var m = a.closest('.mapa'); if (!m) return;
-      m.innerHTML = '<iframe title="Mapa de Alpha Padel" src="' + a.getAttribute('data-mapa') + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;width:100%;height:100%;min-height:320px"></iframe>';
-      m.style.padding = '0';
-    });
+  /* mapa con pátina azul: se revela al llegar al centro de la pantalla, al pasar el ratón o al hacer clic */
+  var mapas = $$('[data-velo]');
+  mapas.forEach(function (m) {
+    m.addEventListener('click', function (ev) { if (ev.target.closest('a')) return; m.classList.add('act'); });
+    m.addEventListener('mouseleave', function () { m.classList.remove('act'); });
   });
+  function velos() {
+    mapas.forEach(function (m) {
+      var r = m.getBoundingClientRect();
+      var d = Math.abs((r.top + r.height / 2) - vh / 2) / (vh / 2);
+      m.style.setProperty('--rv-s', clamp((0.75 - d) / 0.4).toFixed(3));
+    });
+  }
+  if (mapas.length) {
+    w.addEventListener('scroll', function () { requestAnimationFrame(velos); }, { passive: true });
+    w.addEventListener('resize', velos);
+    velos();
+  }
 
   scroll();
 })();
