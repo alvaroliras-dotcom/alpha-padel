@@ -386,3 +386,6 @@ html.js [data-enciende] .w.on{opacity:1}
 .btn:not(.sec2):hover span{color:var(--ap-marino)}
 .portada.clara .h1 em,.portada.clara .h1 mark{background:linear-gradient(transparent 62%,var(--ap-lima) 62%);color:inherit;font-style:normal}
 .pie .fil,.pf-m{border-top-color:var(--ap-lima)}
+
+/* la sección .cita heredaba el estilo de la cita suelta (60ch, borde): ancho completo */
+section.cita{max-width:none;margin-top:0;border-left:0;padding-left:0;font-size:inherit;line-height:inherit}
