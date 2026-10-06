@@ -57,7 +57,7 @@ img,svg{display:block;max-width:100%}
 .cab{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--cab);background:var(--ap-marino);color:#fff;transition:height .3s var(--ease)}
 .cab.baja{--cab:68px;height:68px}
 .cab .cont{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.cab .logo img{width:238px;height:36px}
+.cab .logo img{width:73px;height:64px}
 .cab nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,28px)}
 .cab nav a:not(.btn){font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
 .cab nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:6px}
@@ -210,7 +210,7 @@ html.js .pozo:not(.clav) .ctrl{display:flex}
 .cita cite{display:block;font:700 12px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;margin-top:10px;font-style:normal;color:var(--ap-texto-2-sobre-oscuro)}
 /* responsive */
 @media(max-width:1023px){
-  .cab .logo img{width:205px;height:31px}
+  .cab .logo img{width:62px;height:54px}
   .cab nav{display:none}.menu-b{display:block}
   .portada .cont,.port-i .cont,.dos,.dos.inv,.pozo-gr{grid-template-columns:1fr}
   .cifras{grid-template-columns:1fr 1fr}.cifra:nth-child(2){border-right:0}.cifra:nth-child(3){padding-left:0}
@@ -222,7 +222,7 @@ html.js .pozo:not(.clav) .ctrl{display:flex}
 }
 @media(max-width:767px){
   :root{--cab:60px}.cab.baja{--cab:60px;height:60px}
-  .cab .logo img{width:180px;height:27px}
+  .cab .logo img{width:52px;height:46px}
   .carr .foto,.carr .ult{height:380px;width:82vw}.carr .foto.h{width:82vw}
   .fila{grid-template-columns:48px 1fr}.fila .enl{grid-column:2}.fila b{font-size:28px}
   .esc .fil-p{height:52px;font-size:30px}.ficha{top:calc(var(--fila,3) * 56px + 6px);left:70px;width:96px;height:38px;line-height:38px}.flc{left:190px;top:calc(var(--fila,3) * 56px + 10px)}
@@ -307,7 +307,7 @@ html.js [data-enciende] .w.on{opacity:1}
 .pie-f a:hover{text-decoration:underline;text-underline-offset:4px}
 .pie-f ul{list-style:none;margin:0;padding:0}
 .pie-f .pf-h{font-size:14px;margin-top:12px;font-variant-numeric:tabular-nums}
-.pf-m img{width:205px;height:31px;margin-bottom:20px}
+.pf-m img{width:137px;height:120px;margin-bottom:20px}
 .pie-leg{padding-top:20px;position:relative;z-index:1}
 @media(max-width:1023px){.pie-f{grid-template-columns:1fr 1fr}.pf-m{grid-column:1/-1}}
 @media(max-width:767px){.pie-f{grid-template-columns:1fr}}
@@ -361,3 +361,14 @@ html.js [data-enciende] .w.on{opacity:1}
 .hero-foto>.foto img{width:100%;height:100%;object-fit:cover}
 .hero-foto .estado{position:absolute;left:-24px;bottom:0;width:min(340px,86%);box-shadow:0 18px 40px rgba(12,26,61,.18);background:#fff}
 @media(max-width:1023px){.hero-foto>.foto{aspect-ratio:4/3;max-height:none}.hero-foto .estado{left:12px;right:12px;width:auto}}
+
+/* Cabecera clara con el logotipo original del club */
+.cab{background:var(--ap-blanco-pista);color:var(--ap-marino);box-shadow:0 1px 0 var(--ap-filete)}
+.cab :focus-visible{outline-color:var(--ap-marino)}
+.cab .btn{--c:var(--ap-marino);--f:#fff}
+.cab .btn::before{background:var(--ap-marino-profundo)}
+.cab .btn:hover span{color:var(--ap-marino)}
+.menu-b{border-color:var(--ap-marino);color:var(--ap-marino)}
+.menu-b i{background:var(--ap-marino)}
+.pie-a img{filter:brightness(0) invert(1)}
+.cab.baja .logo img{height:54px;width:auto}

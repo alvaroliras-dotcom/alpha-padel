@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 -25 390 390" xmlns:c2pa="http://c2pa.org/manifest">
+
+
+<!-- símbolo redibujado a mano: dos arcos azules, cinta lima y bola -->
+<path d="M272 128 A76 76 0 1 1 317 225" fill="none" stroke="#1070B4" stroke-width="28" stroke-linecap="round"/>
+<path d="M274 180 A72 52 0 1 1 179 165" fill="none" stroke="#1070B4" stroke-width="26" stroke-linecap="round"/>
+<path d="M135 160 C 175 120, 230 140, 300 212 C 350 262, 400 262, 440 240 C 455 232, 468 222, 478 205" fill="none" stroke="#9DC41E" stroke-width="32" stroke-linecap="round"/>
+<circle cx="352" cy="150" r="24" fill="#D5DB2A"/>
+<path d="M336 159 C 346 148, 358 148, 368 159" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+</svg>
